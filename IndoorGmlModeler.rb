@@ -110,12 +110,19 @@ module UNES
       end
     end
 
+    # Modified by LIK for more detail cell types Nov. 5, 2022
     module CellType
-      SPACE = 0
+      CELL = 0
       DOOR = 1
       WINDOW  = 2
       ELEVATOR = 3
       STAIR = 4
+      CORRIDOR = 5
+      ESCALATOR = 6
+      SLOPE = 7
+      ANCHOR = 8
+      MOVINGWALK = 9
+      OCCUPIEDSPACE = 10
     end
 
     module DoorType
@@ -135,6 +142,14 @@ module UNES
       DOOR = 1
       WINDOW = 2
       ROOM = 3
+      ELEVATOR = 4
+      STAIR = 5
+      CORRIDOR = 6
+      ESCALATOR = 7
+      SLOPE = 8
+      ANCHOR = 9
+      MOVINGWALK = 10
+      OCCUPIEDSPACE = 11
     end
 
     # building
@@ -250,7 +265,8 @@ module UNES
       attr_writer :layer
       attr_accessor :group_id
 
-      @@cell_type_names = %w[SPACE DOOR WINDOW ELEVATOR STAIR]
+      # Modified by LIK for more detail cell types Nov. 5, 2022
+      @@cell_type_names = %w[CELL DOOR WINDOW ELEVATOR STAIR CORRIDOR ESCALATOR SLOPE ANCHOR MOVINGWALK OCCUPIEDSPACE]
 
       def initialize
         super
